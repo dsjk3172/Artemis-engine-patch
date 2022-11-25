@@ -13,16 +13,20 @@ for i in fileiist:
     a = 0
 
     r = re.compile('.*[a-zA-Z].*$')
-    p = re.compile('name = ')
-    m = re.compile('"rt2"')
+    p = re.compile('ja = ')
+    m = re.compile('linkback = ')
+    n = re.compile('name = ')
     for j in lines:
         aaa = ReadFile2.readline().strip("\n")
-        if(a == 0):
-            contents = re.sub(r, aaa, j)
         if p.search(aaa):
             a = a + 1
+        if(a == 0):
+            contents = re.sub(r, aaa, j)
         elif(a != 0):
-            contents = j
+            if(n.search(aaa)):
+                contents = re.sub(r, aaa, j)
+            else:
+                contents = j
         if m.search(aaa):
             a = 0
         WriteFile.write(contents)
