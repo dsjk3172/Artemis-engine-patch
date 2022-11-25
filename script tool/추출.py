@@ -11,7 +11,7 @@ for i in filelist:
 
     abc = list()
 
-    r = re.compile('.*[ぁ-ゔァ-ヴー々〆〤].*$')
+    r = re.compile('.*[一-鿕ぁ-ゔァ-ヴー].*$')
     for i in readline:
         abc = re.findall(r, i)
         contents = "".join(abc) + "\n"

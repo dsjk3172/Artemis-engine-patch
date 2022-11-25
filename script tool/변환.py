@@ -10,7 +10,7 @@ for i in fileiist:
     WriteFile = open(f"{path}/1차 결과물/{i}", 'w', encoding='UTF-8')
     lines = ReadFile.readlines()
 
-    r = re.compile('.*[ぁ-ゔァ-ヴー々〆〤].*$')
+    r = re.compile('.*[一-鿕ぁ-ゔァ-ヴー].*$')
     for j in lines:
         aaa = ReadFile2.readline().strip("\n")
         contents = re.sub(r, aaa, j)
