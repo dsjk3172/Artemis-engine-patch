@@ -14,7 +14,7 @@ for i in fileiist:
 
     r = re.compile('.*[a-zA-Z].*$')
     p = re.compile('ja = ')
-    m = re.compile('linkback = ')
+    m = re.compile('link')
     n = re.compile('name = ')
     for j in lines:
         aaa = ReadFile2.readline().strip("\n")
